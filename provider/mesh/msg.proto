@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package msg;
+
+message NotificationInfo {
+	string alert = 1;
+	string receiver = 2;
+	bool resolved = 3;
+	int64 timestamp = 4;
+}
+
+message NotificationInfoSet {
+	repeated NotificationInfo infos = 1;
+}
