@@ -2,11 +2,16 @@ syntax = "proto3";
 
 package msg;
 
+message Timestamp {
+	int64 seconds = 1;
+	int32 nanoseconds = 2;
+}
+
 message NotificationInfo {
-	string alert = 1;
-	string receiver = 2;
+	string receiver = 1;
+	uint64 alert = 2;
 	bool resolved = 3;
-	int64 timestamp = 4;
+	Timestamp timestamp = 4;
 }
 
 message NotificationInfoSet {
